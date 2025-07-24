@@ -80,7 +80,7 @@ function App() {
       <section id="how-it-works" className="py-5">
         <div className="container">
           <div className="text-center mb-5">
-            <h2 className="fw-bold text-white">Как это работает</h2>
+            <h2 className="fw-bold text-white">Этапы работы</h2>
           </div>
           <div className="row align-items-start justify-content-center orb-steps-container">
             <div className="col-md-4 text-center orb-step">
@@ -106,7 +106,7 @@ function App() {
       <section id="video" className="py-5">
         <div className="container">
           <div className="text-center mb-5">
-            <h2 className="fw-bold text-white">Посмотрите, как это работает</h2>
+            <h2 className="fw-bold text-white">Видеообзор</h2>
           </div>
           <div className="video-container p-0">
             <div className="video-placeholder position-relative">
