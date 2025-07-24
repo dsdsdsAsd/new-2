@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+:root {
+  --glow-color: hsl(219, 89%, 69%);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0B1120;
+  color: #fff;
+}
+
+/* Aurora Background */
+.aurora-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #0B1120;
+  overflow: hidden;
+}
+
+.aurora-background::before {
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(circle at 20% 20%, hsl(219, 89%, 69%, 0.4), transparent 30%),
+                    radial-gradient(circle at 80% 70%, hsl(340, 89%, 69%, 0.3), transparent 30%);
+  filter: blur(100px);
+  animation: aurora-animation 20s infinite alternate;
+}
+
+@keyframes aurora-animation {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(100px, 100px) rotate(30deg); }
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1rem;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+  padding: 2rem;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Navbar */
+.navbar {
+  background: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(11, 17, 32, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
+}
+
+.hero-title-gradient {
+  background: linear-gradient(90deg, #a1c4fd, #ffffff, #a1c4fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pricing-title-gradient {
+  background: linear-gradient(90deg, #d1d1d1, #ffffff, #d1d1d1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-glowing-mango {
+  background: linear-gradient(90deg, #ffc107, #ff8a00);
+  border: none;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.7);
+  transition: all 0.3s ease;
+}
+
+.btn-glowing-mango:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(255, 165, 0, 1);
+}
+
+.btn-neon-glass {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #6a9cfd;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(106, 156, 253, 0.5);
+  transition: all 0.3s ease;
+}
+
+.btn-neon-glass:hover {
+  background: rgba(106, 156, 253, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(106, 156, 253, 0.8);
+}
+
+.btn-vibrant-gradient {
+  background: linear-gradient(90deg, #4f46e5, #a855f7);
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn-vibrant-gradient:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #6366f1, #c084fc);
+}
+
+.btn-cyber-flicker {
+  background: transparent;
+  border: 2px solid #0077B5; /* TenChat Blue */
+  color: #0077B5;
+  text-shadow: 0 0 10px #0077B5;
+  box-shadow: 0 0 20px #0077B5, inset 0 0 20px #0077B5;
+  transition: all 0.3s ease;
+}
+
+.btn-cyber-flicker:hover {
+  background: rgba(0, 119, 181, 0.1);
+  animation: flicker 1.5s infinite alternate;
+}
+
+.btn-aurora-gradient {
+  background: linear-gradient(90deg, hsl(219, 89%, 69%), hsl(340, 89%, 69%));
+  border: none;
+  color: #fff;
+  box-shadow: 0 0 25px hsl(219, 89%, 69%, 0.5), 0 0 25px hsl(340, 89%, 69%, 0.5);
+  transition: all 0.3s ease;
+}
+
+.btn-aurora-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px hsl(219, 89%, 69%, 0.8), 0 0 35px hsl(340, 89%, 69%, 0.8);
+}
+
+.btn-minimal-glow {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(105, 155, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-minimal-glow:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(105, 155, 255, 0.4);
+}
+
+.btn-solid-glow {
+  background: #fff;
+  border: none;
+  color: #0B1120;
+  box-shadow: 0 0 25px rgba(105, 155, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.btn-solid-glow:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(105, 155, 255, 0.8);
+}
+
+.btn-satin-sheen {
+  background: linear-gradient(135deg, #1a2333, #0b1120);
+  border: 1px solid rgba(173, 216, 230, 0.3);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn-satin-sheen:hover {
+  transform: translateY(-2px);
+  border-color: rgba(173, 216, 230, 0.5);
+}
+
+
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    box-shadow: 0 0 20px #0077B5, inset 0 0 20px #0077B5;
+    text-shadow: 0 0 10px #0077B5;
+  }
+  20%, 24%, 55% {
+    box-shadow: none;
+    text-shadow: none;
+  }
+}
+
+.hero-product-shot {
+  position: relative;
+  margin: 5rem auto 0;
+  width: 80%;
+  max-width: 700px;
+  height: 400px;
+  border-radius: 1rem;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
+}
+
+.hero-image-container {
+  margin: 5rem auto 0;
+  width: 80%;
+  max-width: 700px;
+}
+
+.hero-image-container img {
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.bento-item-large {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+/* Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.bento-item {
+  color: #fff;
+}
+
+.icon-gradient {
+  background: linear-gradient(90deg, #ffffff, #a1c4fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+/* How it Works Section - V2 "Energy Orbs" */
+.orb-steps-container {
+  position: relative;
+}
+
+.orb-step {
+  position: relative;
+}
+
+.orb {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  background: radial-gradient(circle, rgba(105, 155, 255, 0.2) 0%, rgba(105, 155, 255, 0) 70%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(105, 155, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.orb span {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 15px var(--glow-color);
+}
+
+.orb-step:hover .orb {
+  transform: scale(1.05);
+  background: radial-gradient(circle, rgba(105, 155, 255, 0.3) 0%, rgba(105, 155, 255, 0) 70%);
+}
+
+.orb-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 75px; /* Half of orb height */
+  right: -50%;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(105, 155, 255, 0.3), transparent);
+  z-index: -1;
+}
+
+@media (max-width: 767px) {
+  .col-md-4:not(:last-child) .holographic-card::after, .orb-step:not(:last-child)::after {
+    display: none;
+  }
+  .orb-step, .holographic-card {
+    margin-bottom: 30px;
+  }
+}
+
+/* Video Section */
+.video-container {
+  max-width: 800px; /* Or any other size you prefer */
+  margin: 0 auto;
+  overflow: hidden; /* To ensure child elements respect the border radius */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border-radius: 1rem;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.video-placeholder {
+  cursor: pointer;
+}
+
+.play-icon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 1rem; /* Corresponds to .rounded-3 */
+  transition: background-color 0.3s ease;
+}
+
+.video-placeholder:hover .play-icon-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.play-icon-overlay i {
+  color: #fff;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.video-placeholder:hover .play-icon-overlay i {
+  transform: scale(1.1);
+}
+
+.video-placeholder img {
+  border-radius: 1rem;
+}
+
+/* Pricing Card */
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 3rem 2rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  min-height: 500px;
+}
+
+.pricing-card h5 {
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card.popular-card {
+  border-color: var(--glow-color);
+  box-shadow: 0 0 25px rgba(105, 155, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.pricing-card .badge {
+  background: linear-gradient(90deg, #6f42c1, #0d6efd);
+}
+
+
+
+.pricing-card ul {
+  padding-left: 0;
+}
+
+.pricing-card ul li {
+  position: relative;
+  padding-left: 1.5rem; /* Space for the dot */
+  margin-bottom: 0.5rem;
+}
+
+.pricing-card ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  transform: translateY(-50%);
+  height: 8px;
+  width: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.daily-price {
+  font-size: 1.1rem;
+}
+
+/* Accordion */
+.accordion-item {
+  border: none;
+  border-radius: 1rem !important;
+  margin-bottom: 0.5rem; /* Reduced margin */
+}
+
+/* Footer */
+.btn-telegram-glass, .btn-whatsapp-glass {
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  gap: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.btn-telegram-glass i, .btn-whatsapp-glass i {
+  font-size: 2.2rem !important;
+}
+
+.btn-telegram-glass {
+  background: radial-gradient(circle, rgba(51, 161, 255, 0.5) 0%, rgba(51, 161, 255, 0.2) 70%); /* Vibrant Sky Blue */
+}
+.btn-telegram-glass:hover {
+  transform: translateY(-2px);
+  background: radial-gradient(circle, rgba(51, 161, 255, 0.6) 0%, rgba(51, 161, 255, 0.3) 70%);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-whatsapp-glass {
+  background: radial-gradient(circle, rgba(118, 235, 78, 0.5) 0%, rgba(118, 235, 78, 0.2) 70%); /* Vibrant Salad Green */
+}
+.btn-whatsapp-glass:hover {
+  transform: translateY(-2px);
+  background: radial-gradient(circle, rgba(118, 235, 78, 0.6) 0%, rgba(118, 235, 78, 0.3) 70%);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.accordion-button:not(.collapsed) {
+  color: #fff;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-button::after {
+  filter: invert(1) grayscale(100%);
+}
+
+/* General */
+section {
+  scroll-margin-top: 80px;
+}
+
+.op-50 {
+  opacity: 0.5;
+}
+
+@media (max-width: 992px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-item-large {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
